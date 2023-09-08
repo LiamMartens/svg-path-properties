@@ -8,12 +8,12 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
-    "declarationDir": "dist/types",
     "declaration": true,
+    "outDir": "lib",
     "target": "es2015",
-    "module": "es2015",
+    "module": "CommonJS",
     "strict": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "lib"]
 }

@@ -10,10 +10,14 @@
     "svg"
   ],
   "homepage": "http://geoexamples.com/path-properties/",
-  "main": "dist/svg-path-properties.cjs.js",
-  "module": "dist/svg-path-properties.esm.js",
-  "unpkg": "dist/svg-path-properties.min.js",
-  "types": "dist/types/index.d.ts",
+  "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rveciana/svg-path-properties.git"
@@ -21,9 +25,7 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "rollup -c",
-    "build": "npm run build:types && npm run build:js",
+    "build": "tsc -p .",
     "test": "ts-node --skip-project node_modules/tape/bin/tape test/**/*-test.ts",
     "preversion": "npm run build && git add dist && git commit --allow-empty -am \"new version\"",
     "postpublish": "git push && git push --tags"
