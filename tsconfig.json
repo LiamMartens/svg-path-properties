@@ -9,9 +9,10 @@
     "noUnusedLocals": true,
     "noImplicitAny": true,
     "declaration": true,
+    "emitDeclarationOnly": true,
     "outDir": "lib",
     "target": "es2015",
-    "module": "CommonJS",
+    "module": "ESNext",
     "strict": true
   },
   "include": ["src/**/*"],
